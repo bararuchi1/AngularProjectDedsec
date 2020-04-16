@@ -1,0 +1,14 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="card leftMargin " *ngFor="let product of products">
+        <img class="card-img-top" src="../../assets/img/{{product.imageFileName}}.jpg" alt="Card image"
+          style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">{{product.productName}}</h4>
+          <p class="card-text">{{product.productDesc}}</p>
+          <a href="#" class="btn btn-primary">Book Slot</a>
+        </div>
+      </div>
+    </div>
+  </div>
