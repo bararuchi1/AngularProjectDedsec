@@ -1,0 +1,28 @@
+.changePosition {
+  position: static;
+  height: auto;
+}
+.errorClass {
+  color: rgb(224, 70, 50) !important;
+}
+.infoClass {
+  color: rgb(29, 27, 179);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+.powderBlue{
+  padding: 1em;
+  background-color: powderblue;
+}
+.control-label{
+  color: #210097;
+}
+.successClass{
+  color: #06af1c;
+}
+label{
+  font-weight: bold;
+  font-size: medium;
+}

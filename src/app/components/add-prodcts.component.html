@@ -1,0 +1,126 @@
+<div class="changePosition">
+    <div class="container text-white pt-5">
+        <form class="form-horizontal" [formGroup]="productForm">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2>Create Product</h2>
+                </div>
+            </div>
+            
+            <span class="successClass py-3">{{genericMessages}}</span><br>
+            <span class="errorClass py-3">{{formErrors.genericError.productError}}</span>
+            <div class="panel-body">
+
+                <div class="row form-group" >
+                    <div class="col-md-3"><label for="productGroup" class="control-label">Product Group :</label>
+                        <input id="productGroup" type="number" placeholder="Product Group" class="form-control"
+                            formControlName="productGroup">
+                        <span class="errorClass">{{formErrors.productGroup}}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="productCode" class="control-label">Product Code :</label>
+                        <input id="productCode" type="number" placeholder="Product Code" class="form-control"
+                            formControlName="productCode">
+                        <span class="errorClass">{{formErrors.productCode || formErrors.productCodeGroup}}</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-7"> <label for="productName" class="control-label">Product Name :</label>
+                        <input id="productName" placeholder="Enter Product Name" class="form-control"
+                            formControlName="productName">
+                        <span class="errorClass">{{formErrors.productName}}</span>
+                    </div>
+                    <div class="col-md-7 pt-2">
+                        <label for="productDesc"  class="control-label">Product Description :</label>
+                        <textarea class="form-control" rows="3" id="productDesc" name="productDesc"
+                            placeholder="Enter Product Description" formControlName="productDesc"></textarea>
+                        <span class="errorClass">{{formErrors.productDesc}}</span>
+                    </div>
+                    <span class="infoClass"  *ngIf="productForm.get('associateDetails')?.length>0">{{productForm.get('associateDetails')?.length}} No of Associates added. </span>
+                    <!-- <span>{{associateDetail.valid}}</span> -->
+                </div>
+               
+
+
+                <div class="row form-group col-md-7 powderBlue" [formGroup]="associateDetail" >
+                    <span class="errorClass">{{formErrors.genericError["associateDetails"]}}</span>
+                    <div class="col-md-12"><label for="associateName" class="control-label">Associate Name :</label>
+                        <input id="associateName" type="text" placeholder="Enter Associate Name" class="form-control"
+                            formControlName="associateName">
+                        <span class="errorClass">{{formErrors.associateName}}</span>
+                    </div>
+
+                    <div class="col-md-6 pt-2">
+                        <label for="associateDateOfBirth" class="control-label">Date Of Birth :</label>
+                        <input id="associateDateOfBirth" type="date" class="form-control" formControlName="associateDateOfBirth">
+                        <!-- <span *ngIf="associateDetail.get('associateDateOfBirth').dirty?logKeyValuePair(associateDetail):''">Dirty</span> -->
+                        <span class="errorClass">{{formErrors.associateDateOfBirth}}</span>
+                    </div>
+                    <div class="col-md-6 pt-2">
+                        <label for="productCode" class="control-label">Adhaar Number :</label>
+                        <input id="productCode" type="text" placeholder="Adhaar Number" class="form-control"
+                            formControlName="associateAdhaarNo">
+                        <span class="errorClass">{{formErrors.associateAdhaarNo}}</span>
+                    </div>
+                    <span>{{associateDetail.errors}}</span>
+                    <input type="button" value="Add Associate" class="btn btn-primary mt-3" [disabled]=associateDetail.disabled
+                        (click)=addAssociate()>
+                        <input type="button" value="Add Another" class="btn btn-primary mt-3"
+                        *ngIf="associateDetail.disabled && !productForm.disabled" (click)=addAnotherAssociate()>
+                        <input type="button" value="Clear List" class="btn btn-danger mt-3"
+                        *ngIf="productForm.get('associateDetails')?.length>0" (click)=clearAssociatesList()>
+                </div>
+
+                <input type="button" value="Add Product"  class="btn btn-primary mt-3" [disabled]=productForm.disabled
+                    (click)=finalSubmit()>
+                    <input type="button" value="Add Another"  class="btn btn-primary mt-3" *ngIf="genericMessages!=''"
+                    (click)=addAnotherProduct()>
+            </div>
+        </form>
+    </div>
+    <!-- 
+<form class="form-horizontal" [formGroup]="employeeForm">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create Employee</h3>
+      </div>
+      <div class="panel-body">
+        
+<div class="form-group"
+[ngClass]="{'has-error': ((employeeForm.get('fullName').touched ||
+                           employeeForm.get('fullName').dirty) &&
+                           employeeForm.get('fullName').errors)}">
+<label class="col-sm-2 control-label" for="fullName">Full Name</label>
+<div class="col-sm-8">
+<input id="fullName" type="text" class="form-control" formControlName="fullName">
+<span class="help-block"
+    *ngIf="((employeeForm.get('fullName').touched ||
+             employeeForm.get('fullName').dirty) &&
+             employeeForm.get('fullName').errors)">
+<span *ngIf="employeeForm.get('fullName').errors.required">
+  Full Name is required
+</span>
+<span *ngIf="employeeForm.get('fullName').errors.minlength ||
+             employeeForm.get('fullName').errors.maxlength">
+    Full Name must be greater than 2 characters and less than 10 characters
+</span>
+</span>
+</div>
+</div>
+  
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="email">Email</label>
+          <div class="col-sm-8">
+            <input id="email" type="text" class="form-control">
+          </div>
+        </div>
+  
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-primary" type="button" (click)="finalSubmit()">Save</button>
+      </div>
+    </div>
+  </form>  
+-->
+</div>

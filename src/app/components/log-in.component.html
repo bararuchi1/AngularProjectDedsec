@@ -1,0 +1,23 @@
+<form [formGroup]="userLogin" class="container col-md-5 pt-5" (ngSubmit)="loginCheck()">
+    <h2>Welcome ! Please provide your credentials to login to Dedsec Portal.</h2>
+    <hr>
+    <span class="text-danger">{{statusMessage}}</span>
+    <div class="form-group">
+        <label for="userdetail">Email address:</label>
+        <input type="text" class="form-control" id="userdetail" formControlName="userName">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" formControlName="userPassword">
+    </div>
+    <div class="form-group">
+        <label for="role">Role:</label>
+        <select class="form-control" id="role" formControlName="userRole">
+            <option value="select">--Select--</option>
+            <option value="admin">ADMIN</option>
+            <option value="customer">Customer</option>
+            <option value="associate">Associate/Technician</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

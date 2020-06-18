@@ -1,0 +1,21 @@
+{
+    "ADMIN": 
+        {
+            "functionList": 
+                {
+                    "addProducts": "Add Products",
+                    "addAssociates": "Add Associate",
+                    "allProducts": "View All Product",
+                    "modifyProduct": "Modify/Delete Products",
+                    "modifyAssociate": "Modify/Delete Associates"
+                },
+                "headerList":{
+                    "adminFunction":"Admin Functions",
+                    "salesReport":"Sales Report",
+                    "logOut":"Log Out"
+                }
+            
+        }
+    ,
+    "DEMO": "READING DEMO FROM JSON"
+}

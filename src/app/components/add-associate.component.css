@@ -1,0 +1,13 @@
+.errorClass {
+    color: rgb(224, 70, 50) !important;
+  }
+  .successClass{
+    color: #06af1c;
+  }
+  label{
+    font-weight: bold;
+    font-size: medium;
+  }
+  .control-label{
+    color: #210097;
+  }  

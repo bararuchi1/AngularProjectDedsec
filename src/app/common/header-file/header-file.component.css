@@ -50,4 +50,9 @@
     padding: 1.2rem;
     
   }
- 
+  .logOut{
+    color: red !important;
+  }
+ .changePointer{
+cursor: pointer;
+ }

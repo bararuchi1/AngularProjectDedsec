@@ -9,10 +9,10 @@
     <a class="navbar-brand logo" href="#">
       <img src="../../../assets/img/company-logo3.png" alt="Logo" style="width:40px;">Dedsec Co.
     </a>
-    <a class="active" href="javascript:void(0)">Home</a>
-    <a href="javascript:void(0)">News</a>
-    <a href="javascript:void(0)" >Contact</a>
-    <a href="javascript:void(0)" style="float:right">Login</a>
-    <a href="javascript:void(0)" style="float:right">Sign Up</a>
+    <div   *ngFor="let list of headerList | keyvalue: originalOrder" class="changePointer">
+      <div  class="navbar" (click)=headerFunctions(list.key) class="{{list.key}} ">{{list.value}}<div>
+    </div>
+   
+  
   </div> 
   

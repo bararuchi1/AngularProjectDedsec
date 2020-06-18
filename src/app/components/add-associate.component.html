@@ -1,0 +1,52 @@
+<div class="changePosition">
+    <div class="container text-white pt-5">
+        <form class="form-horizontal" [formGroup]="associateDetail">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2>Add Associate</h2>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="row form-group col-md-8">
+                    <div class="col-md-12"><label for="productCode" class="control-label">Select a Product Code :</label>
+                       
+                            <select id="productCode" class="form-control" formControlName="productCodeInAssociate">
+                                <option value="">Select</option>
+                                <option *ngFor="let productCode of productCodeList|keyvalue;let i=index;" value="{{productCode.key}}">{{productCode.value}}</option>
+                            </select>
+                        <span class="errorClass">{{formErrors.productCodeInAssociate}}</span>
+                    </div>
+                   
+            
+                    <span class="errorClass">{{formErrors.genericError}}</span>
+                    <div class="col-md-12"><label for="associateName" class="control-label">Associate Name :</label>
+                        <input id="associateName" type="text" placeholder="Enter Associate Name" class="form-control"
+                            formControlName="associateName">
+                        <span class="errorClass">{{formErrors.associateName}}</span>
+                    </div>
+
+                    <div class="col-md-6 pt-2">
+                        <label for="productCode" class="control-label">Date Of Birth :</label>
+                        <input id="productCode" type="date" class="form-control" formControlName="associateDateOfBirth">
+                        <span class="errorClass">{{formErrors.associateDateOfBirth}}</span>
+                    </div>
+                    <div class="col-md-6 pt-2">
+                        <label for="productCode" class="control-label">Adhaar Number :</label>
+                        <input id="productCode" type="text" placeholder="Adhaar Number" class="form-control"
+                            formControlName="associateAdhaarNo">
+                        <span class="errorClass">{{formErrors.associateAdhaarNo}}</span>
+                    </div>
+                    <div class="col-md-12 pt-2">
+                        <app-upload-component  (uploadedImage)="onFileUpload($event)"></app-upload-component>
+                    </div>
+                    
+                    <input type="button" value="Add Associate" class="btn btn-primary mt-3"
+                         (click)=addAssociate()>
+                        <input type="button" value="Add Another" class="btn btn-primary mt-3"
+                        *ngIf="associateDetail.disabled" (click)=addAnotherAssociate()>
+                        
+                </div>
+            </div>
+        </form>
+    </div>

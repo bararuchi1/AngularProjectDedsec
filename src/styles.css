@@ -1,17 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+background-color: rgb(142, 191, 197);
+
+}
 .card {
-    overflow: hidden;
-    width:500px;
-    height: 500px;
-  }
-  
-  .card .card-img {
-    transition: all 0.5s ease;
-  }
-  
-  .card:hover .card-img {
-    transform: scale(1.2);
-  }
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+}
+
+.card .card-img {
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.2);
+}
